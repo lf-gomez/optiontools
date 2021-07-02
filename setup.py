@@ -9,6 +9,7 @@ setup(
 	author_email='luisfelipegomezestrada@gmail.com',
     license='MIT',
     url='https://github.com/lf-gomez/optiontools',
+    download_url='https://github.com/lf-gomez/optiontools/archive/refs/tags/v0.1.1-alpha.tar.gz',
     keywords=['FINANCE', 'OPTIONS', 'DERIVATIVES'],
     install_requires=['numpy', 'scipy'],
     setup_requires=['pytest-runner'],
