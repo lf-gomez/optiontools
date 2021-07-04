@@ -596,7 +596,7 @@ class CashOrNothing(Option):
 		if self.option_type == 'put':
 			return self.C * np.exp(-self.rf * self.T) * st.norm.cdf(-d2)
 		else:
-			return self.C * np.exp(-self.rf * self.T) * st.norm.cdf(-d2)
+			return self.C * np.exp(-self.rf * self.T) * st.norm.cdf(d2)
 
 class American(Option):
 	""" Model representing an American option.

@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name='optiontools',
     packages=find_packages(include=['optiontools']),
-    version='0.1.4',
+    version='0.1.5',
     description='Tools for valuating financial derivatives',
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -14,7 +14,7 @@ setup(
 	author_email='luisfelipegomezestrada@gmail.com',
     license='MIT',
     url='https://github.com/lf-gomez/optiontools',
-    download_url='https://github.com/lf-gomez/optiontools/archive/refs/tags/v0.1.4-alpha.tar.gz',
+    download_url='https://github.com/lf-gomez/optiontools/archive/refs/tags/v0.1.5-alpha.tar.gz',
     keywords=['FINANCE', 'OPTIONS', 'DERIVATIVES'],
     install_requires=['numpy', 'scipy'],
     setup_requires=['pytest-runner'],
