@@ -492,15 +492,15 @@ class AssetOrNothing(Option):
 		"""
 		super().__init__(So, K, rf, sigma, T, option_type, q)
 
-	def get_d2(self) -> float:
-		""" Calculates d2 from Black Scholes Merton model.
+	def get_d1(self) -> float:
+		""" Calculates d1 from Black Scholes Merton model.
 
 		Returns
 		-------
 		float : d1 of the option
 		"""
-		return (np.log(self.So/self.K) + (self.rf - 0.5*self.sigma**2)*self.T) /\
-                (self.sigma*self.T**0.5)
+		return (np.log(self.So/self.K) + (self.rf + 0.5*self.sigma**2)*self.T) /\
+				(self.sigma*self.T**0.5)
 
 	@overrides(Option)
 	def price(self) -> float:
@@ -510,11 +510,11 @@ class AssetOrNothing(Option):
 		-------
 		float : the fair price of the option
 		"""
-		d2 = self.get_d2()
+		d1 = self.get_d1()
 		if self.option_type == 'put':
-			return self.So * np.exp(-self.q * self.T) * st.norm.cdf(-d2)
+			return self.So * np.exp(-self.q * self.T) * st.norm.cdf(-d1)
 		else:
-			return self.So * np.exp(-self.q * self.T) * st.norm.cdf(d2)
+			return self.So * np.exp(-self.q * self.T) * st.norm.cdf(d1)
 
 class CashOrNothing(Option):
 	""" Model representing a Cash or Nothing option.
